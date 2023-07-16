@@ -1,0 +1,75 @@
+*, *::before, *::after {
+    box-sizing: border-box;                                   /*targets all elements on the page */
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+  }
+
+  .circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; /* so that it stays on top of all other elements */
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(to right, #1D4350, #A43931);
+  }
+  
+  /*in case lots of number inputs are there */
+
+  .calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  }
+  
+  .calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 3px solid rgb(67, 66, 66);
+    outline: none;
+    background-color: rgba  (255, 255, 255, .75);
+  }
+  
+  .calculator-grid > button:hover {
+    background-color:#A43931
+  }
+
+  /*for the big buttons*/
+
+  .span-two {
+    grid-column: span 2;
+  }
+  
+  .output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+  }
+  
+  .output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+  }
+  
